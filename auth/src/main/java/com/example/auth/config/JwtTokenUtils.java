@@ -33,28 +33,15 @@ public class JwtTokenUtils {
         return token;
     }
 
-    //토큰 parse
-    public boolean parseToken(String token) {
+    // 토큰 parse
+    public TokenInfo parseToken(String token){
         Claims payload = (Claims) Jwts
                 .parser()
                 .verifyWith(Keys.hmacShaKeyFor(tokenSecret.getBytes()))
                 .build()
                 .parse(token)
                 .getPayload();
-        System.out.println(payload);
-        return true;
-    }
-
-    // 토큰 검증
-    public boolean validateToken(String token){
-        Claims payload = (Claims) Jwts
-                .parser()
-                .verifyWith(Keys.hmacShaKeyFor(tokenSecret.getBytes()))
-                .build()
-                .parse(token)
-                .getPayload();
-        System.out.println(payload);
-        return true;
+        return TokenInfo.fromClaims(payload);
     }
 
 }

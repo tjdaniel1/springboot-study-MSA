@@ -8,20 +8,13 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:mysql://localhost:3306/music_test2?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    url: jdbc:h2:mem:test
     password: 1234
-    username: root
+    username: sa
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
-
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ljs
-server:
-  port: 9000
 
 token:
   secret: vsdab1232fkewbquriebp12315555555aa

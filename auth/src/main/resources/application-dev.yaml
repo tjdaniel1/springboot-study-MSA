@@ -20,8 +20,7 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ljs
-server:
-  port: 9000
+
 
 token:
   secret: vsdab1232fkewbquriebp12315555555aa
