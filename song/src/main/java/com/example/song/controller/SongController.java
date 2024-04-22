@@ -1,6 +1,5 @@
 package com.example.song.controller;
 
-import com.example.song.global.domain.entity.Playlist;
 import com.example.song.global.domain.entity.Song;
 import com.example.song.dto.request.SongRequest;
 import com.example.song.service.SongService;
@@ -21,11 +20,9 @@ public class SongController {
     @PostMapping
     public void save(@RequestBody SongRequest req){
         songService.save(req);
-
     }
     @GetMapping("/{id}")
     public Song getById(@PathVariable("id") Long id){
-        Playlist p = new Playlist();
         return songService.getById(id);
     }
 }

@@ -23,26 +23,21 @@ public class SongServiceImpl implements SongService{
     public List<Song> getAll() {
         return songRepository.findAll();
     }
-
     @Override
     @Transactional
     public Song getById(Long id) {
         Optional<Song> byId = songRepository.findById(id);
-        Song song = byId.orElse(new Song());return song;
-//        if(byId.isEmpty()) return null;
-//        return byId.get();
+        Song song = byId.orElse(new Song());
+        return song;
     }
 
     @Override
     @Transactional
     public Song update(SongRequest req, Long id) {
-//        Optional<Song> byId = songRepository.findById(id);
-//        if(byId.isEmpty()) throw new IllegalArgumentException();
-//        Song song = byId.get();
-        Song song = songRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        Song song = songRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new);
         song.setTitle(req.title());
         song.setLyrics(req.lyrics());
-
-        return null;
+        return song;
     }
 }

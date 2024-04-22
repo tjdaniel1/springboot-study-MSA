@@ -10,5 +10,4 @@ public interface SongService {
     List<Song> getAll();
     Song getById(Long id);
     Song update(SongRequest req, Long id);
-
 }

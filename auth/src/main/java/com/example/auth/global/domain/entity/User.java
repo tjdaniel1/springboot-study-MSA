@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -19,10 +20,10 @@ public class User {
     private Long id;
     @Column(name = "USER_NAME")
     private String username;
-    @Column(name = "USER_PASSWORD")
+    @Column(name = "USER_PASSWORD") @Setter
     private String password;
-    @Column(name = "USER_NICKNAME")
+    @Column(name = "USER_NICKNAME") @Setter
     private String nickname;
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user")
     private List<Playlist> playlists;
 }

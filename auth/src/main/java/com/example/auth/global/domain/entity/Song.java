@@ -1,5 +1,6 @@
 package com.example.auth.global.domain.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,13 +11,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor @NoArgsConstructor
-@Getter
-@Builder
+@Getter @Builder
 @Table(name = "SONGS")
-
 public class Song {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SONG_ID")
     private Long id;
     @Column(name = "SONG_TITLE")

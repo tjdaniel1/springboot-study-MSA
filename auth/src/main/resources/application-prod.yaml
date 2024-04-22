@@ -4,6 +4,8 @@
 #spring.datasource.username=root
 
 
+server:
+  port: 9000
 spring:
   application:
     name: auth-service
@@ -17,13 +19,16 @@ spring:
     show-sql: true
 
 eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.80.4:8762/eureka/
   instance:
     prefer-ip-address: true
-    instance-id: ljs
-server:
-  port: 9000
+    instance-id: psm
+
 
 token:
-  secret: vsdab1232fkewbquriebp12315555555aa
+  secret: vsddsaed213214rfsdagsd4983fwe43r234981742*1wdsfa56f1ads32v1xc2zvcxzcxzvgweaaa
   expiration: 60000
+
 

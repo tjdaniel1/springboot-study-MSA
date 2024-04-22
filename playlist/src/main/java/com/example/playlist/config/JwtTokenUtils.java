@@ -1,6 +1,6 @@
-package com.example.auth.config;
+package com.example.playlist.config;
 
-import com.example.auth.global.domain.entity.User;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -19,19 +19,6 @@ public class JwtTokenUtils {
 //    secretkey 존재한다
     @Value("${token.secret}")
      private String tokenSecret;
-
-
-    // 토큰 만들기
-     public String createToken(User user) {
-         SecretKey secretKey = Keys.hmacShaKeyFor(tokenSecret.getBytes());
-         String token = Jwts.builder()
-                 .claim("id", user.getId())
-                 .claim("nickname", user.getNickname())
-                 .signWith(secretKey)
-                 .expiration(new Date(new Date().getTime() + tokenExpiration))
-                 .compact();
-         return token;
-     }
 
     // 토큰 parse
      public TokenInfo parseToken(String token){

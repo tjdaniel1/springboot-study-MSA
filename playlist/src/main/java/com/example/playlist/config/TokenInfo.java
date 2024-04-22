@@ -1,4 +1,4 @@
-package com.example.auth.config;
+package com.example.playlist.config;
 
 import io.jsonwebtoken.Claims;
 

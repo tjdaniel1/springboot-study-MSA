@@ -1,7 +1,6 @@
 package com.example.auth.dto.request;
 
 import com.example.auth.global.domain.entity.User;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 public record SignupRequest(
         String username, String password, String nickname
@@ -13,6 +12,6 @@ public record SignupRequest(
                 encodedPassword,
                 nickname,
                 null
-        );
+                );
     }
 }

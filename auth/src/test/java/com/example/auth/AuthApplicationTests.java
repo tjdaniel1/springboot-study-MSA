@@ -17,7 +17,7 @@ class AuthApplicationTests {
 	}
 	@Test
 	void profilesUsernameTest(){
-		Assertions.assertEquals("sa",username);
+		Assertions.assertEquals("sa", username);
 	}
 
 }
